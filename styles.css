@@ -8,3 +8,37 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
     display:block;
 }
 
+body{
+	background-image: url("images/elephantheader.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+.desktop-menu ul{
+	list-style-type: none;
+	text-align: center;
+	background-color:gray;
+	padding:1.5%;
+	position: relative;
+}
+.desktop-menu li a{
+	text-decoration: none;
+	font-size: 1.1rem;
+	padding:1%;
+	font-family: 'lato', sans-serif;
+	font-weight:400;
+	color:white;
+}
+
+.desktop-menu ul li{
+	display: inline;
+}
+.menu, .hamburger, .cross{
+	display:none;
+}
+.overheader {
+	text-align: center;
+	display: flex;
+
+}
