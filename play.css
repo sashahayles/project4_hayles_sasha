@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+    display:block;
+}
+
+/*hamburger menu*/
+.desktop-menu{
+	display:none;
+}
+.hamburger{
+	background:none;
+	position:absolute;
+	top:0;
+	right:0;
+	line-height:45px;
+	padding:7px 15px 0px 15px;
+	color:#feffff;
+	border:0;
+	font-size:1.4em;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	z-index:10000000000000;
+}
+.cross{
+	background:none;
+	position:absolute;
+	top:0px;
+	right:0;
+	padding:7px 15px 0px 15px;
+	color:#feffff;
+	border:0;
+	font-size:3em;
+	line-height:65px;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	z-index:10000000000000;
+}
+.menu{z-index:1000000; width:100%; background:#f1f1f1;  position:absolute; text-align:center; }
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:20px 0 6px 0; border-bottom:#dddddd 1px solid;}
+.menu li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px;     font-family: 'oxygen', sans-serif; font-weight: 600; font-size: 1rem; color:#efb672;}
+.menu ul li a:hover {  color: #666; text-decoration:none;}
+.menu a{text-decoration:none; color:#666;}
+.menu a:hover{text-decoration:none; color:#666;}
+.logo {padding-left:20px; text-decoration: none; color:black}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+span{
+  position:absolute;
+  top: 400px;
+  left: 400px;
+}
+
+h1{
+  font-size:2rem;
+  font-family: 'Pangolin', cursive;
+  background-color: #efb672;
+  padding:4%;
+  text-align: center;
+  color:white;
+}
+
+p{
+  padding: 2% 20% 0.5%;
+  justify-content: center;
+  background-color: #efb672;
+  color:white;
+  font-size: 1.1rem;
+  font-family: 'Red Hat Display', sans-serif;
+}
+@media (min-width:700px) {
+	.desktop-menu{
+		display: block;
+	}
+	.desktop-menu ul{
+		list-style-type: none;
+		text-align: center;
+		background-color:#b6c0ca;
+		padding:1.5%;
+		position: relative;
+	}
+	.desktop-menu li a{
+		text-decoration: none;
+		font-size: 1.1rem;
+		padding:0.6%;
+		font-family: 'lato', sans-serif;
+		font-weight:400;
+		color:white;
+	}
+
+	.desktop-menu ul li{
+		display: inline;
+	}
+	.menu, .hamburger, .cross{
+		display:none;
+	}
+	.desktop-menu li a:hover {
+		font-weight: bold;
+	}
+	/*menu animation*/
+	.desktop-menu * {
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  -webkit-transition: all 0.35s ease;
+	  transition: all 0.35s ease;
+	}
+	.desktop-menu li {
+	  list-style: outside none none;
+	  margin: 0.5em 1.5em;
+	  padding: 0;
+	}
+	.desktop-menu a {
+	  padding: 0.4em 0;
+	  color: rgba(255, 255, 255, 0.5);
+	  position: relative;
+	  text-decoration: none;
+	  display: inline-block;
+	}
+	.desktop-menu a:before {
+	  position: absolute;
+	  content: '';
+	  -webkit-transition: all 0.35s ease;
+	  transition: all 0.35s ease;
+	  opacity: 0;
+	  top: 20%;
+	  bottom: 20%;
+	  left: 0;
+	  right: 0;
+	  border-top: 3px solid #f6e6d0;
+	  border-bottom: 3px solid #f6e6d0;
+	}
+	.desktop-menu a:hover,
+	.desktop-menu .current a {
+	  color: #ffffff;
+	}
+	.desktop-menu a:hover:before,
+	.desktop-menu .current a:before {
+	  opacity: 1;
+	  top: 0;
+	  bottom: 0;
+	}

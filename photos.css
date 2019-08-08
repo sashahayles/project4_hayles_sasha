@@ -88,14 +88,14 @@ h2{
 
 p{
   padding:1.5%;
-  font-size: 1rem;
+  font-size: 1.1rem;
 	font-family: 'Red Hat Display', sans-serif;
 }
 
 ul {
   padding:0.2% 3%;
 	font-family: 'Red Hat Display', sans-serif;
-	font-size: 1rem;
+	font-size: 1.2rem;
 
 }
 .images img:hover {
@@ -179,6 +179,7 @@ ul {
 @media screen and (max-width: 400px) {
 .images div {
    margin: 0;
+	 padding:1%;
   }
 .images {
    padding: 0;
@@ -271,4 +272,8 @@ ul {
 		  bottom: 0;
 		}
 		/*menu animation*/
+	}
+	@media screen and (max-width:700px) {
+		.photoheader {
+			padding:14%;
 	}
