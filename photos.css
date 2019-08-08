@@ -1,0 +1,274 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+    display:block;
+}
+
+/*hamburger menu*/
+.desktop-menu{
+	display:none;
+}
+.hamburger{
+	background:none;
+	position:absolute;
+	top:0;
+	right:0;
+	line-height:45px;
+	padding:7px 15px 0px 15px;
+	color:#feffff;
+	border:0;
+	font-size:1.4em;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	z-index:10000000000000;
+}
+.cross{
+	background:none;
+	position:absolute;
+	top:0px;
+	right:0;
+	padding:7px 15px 0px 15px;
+	color:#feffff;
+	border:0;
+	font-size:3em;
+	line-height:65px;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	z-index:10000000000000;
+}
+.menu{z-index:1000000; width:100%; background:#f1f1f1;  position:absolute; text-align:center; }
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:20px 0 6px 0; border-bottom:#dddddd 1px solid;}
+.menu li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px;     font-family: 'oxygen', sans-serif; font-weight: 600; font-size: 1rem; color:#efb672;}
+.menu ul li a:hover {  color: #666; text-decoration:none;}
+.menu a{text-decoration:none; color:#666;}
+.menu a:hover{text-decoration:none; color:#666;}
+.logo {padding-left:20px; text-decoration: none; color:black}
+
+/*hamburger menu end*/
+.contain{
+  text-align: center;
+}
+/*photos flexbox and hover*/
+.images {
+  padding: .5vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.images div {
+  flex: auto;
+  width: 200px;
+  margin: .5vw;
+}
+.images div img {
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+}
+
+h1{
+  text-align:center;
+  font-size:2rem;
+	font-family: 'Pangolin', cursive;
+}
+
+h2{
+  text-align:center;
+  padding:2% 0% 0%;
+  font-size:1.7rem;
+	font-family: 'Pangolin', cursive;
+}
+
+p{
+  padding:1.5%;
+  font-size: 1rem;
+	font-family: 'Red Hat Display', sans-serif;
+}
+
+ul {
+  padding:0.2% 3%;
+	font-family: 'Red Hat Display', sans-serif;
+	font-size: 1rem;
+
+}
+.images img:hover {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    transform: scale(1.1);
+    opacity: 1.75;
+  }
+	.photoheader {
+		background-color:#efb672;
+		padding:7%;
+		color: white;
+	}
+/* end flexbox and hover*/
+
+/*fact type page begins*/
+/* Tiny reset thingy */
+
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2.1px;
+}
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+  height: 100vh;
+
+  /* For text formatting. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
+
+/* The styling for the static div. */
+.static {
+  background:#efb672;
+  height:40vh;
+}
+
+/* background images for parallax */
+.bg1::after {
+  background-image: url('images/ivory.jpg');
+}
+
+.bg2::after {
+  background-image: url('images/lion-elephant.jpg');
+}
+.bg3::after {
+  background-image: url('images/elephant.jpg');
+}
+
+.bg4::after {
+  background-image: url('images/asianelephant.jpg');
+}
+/*fact type page ends*/
+/*media queries*/
+@media screen and (max-width: 400px) {
+.images div {
+   margin: 0;
+  }
+.images {
+   padding: 0;
+  }
+}
+@media (min-width:300px) and (max-width: 700px) {
+	.static {
+    background: #efb672;
+    height: 50vh;
+	}
+
+  .bg1::after {
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .bg2::after {
+    background-image: no-repeat;
+    background-size:auto;
+}
+  }
+	@media (min-width:700px) {
+		.desktop-menu{
+			display: block;
+		}
+		.desktop-menu ul{
+			list-style-type: none;
+			text-align: center;
+			background-color:#b6c0ca;
+			padding:1.5%;
+			position: relative;
+		}
+		.desktop-menu li a{
+			text-decoration: none;
+			font-size: 1.1rem;
+			padding:0.6%;
+			font-family: 'lato', sans-serif;
+			font-weight:400;
+			color:white;
+		}
+
+		.desktop-menu ul li{
+			display: inline;
+		}
+		.menu, .hamburger, .cross{
+			display:none;
+		}
+		.desktop-menu li a:hover {
+			font-weight: bold;
+		}
+		/*menu animation*/
+		.desktop-menu * {
+		  -webkit-box-sizing: border-box;
+		  box-sizing: border-box;
+		  -webkit-transition: all 0.35s ease;
+		  transition: all 0.35s ease;
+		}
+		.desktop-menu li {
+		  list-style: outside none none;
+		  margin: 0.5em 1.5em;
+		  padding: 0;
+		}
+		.desktop-menu a {
+		  padding: 0.4em 0;
+		  color: rgba(255, 255, 255, 0.5);
+		  position: relative;
+		  text-decoration: none;
+		  display: inline-block;
+		}
+		.desktop-menu a:before {
+		  position: absolute;
+		  content: '';
+		  -webkit-transition: all 0.35s ease;
+		  transition: all 0.35s ease;
+		  opacity: 0;
+		  top: 20%;
+		  bottom: 20%;
+		  left: 0;
+		  right: 0;
+		  border-top: 3px solid #f6e6d0;
+		  border-bottom: 3px solid #f6e6d0;
+		}
+		.desktop-menu a:hover,
+		.desktop-menu .current a {
+		  color: #ffffff;
+		}
+		.desktop-menu a:hover:before,
+		.desktop-menu .current a:before {
+		  opacity: 1;
+		  top: 0;
+		  bottom: 0;
+		}
+		/*menu animation*/
+	}

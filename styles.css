@@ -10,35 +10,190 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
 
 body{
 	background-image: url("images/elephantheader.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
 }
-
-.desktop-menu ul{
-	list-style-type: none;
-	text-align: center;
-	background-color:gray;
-	padding:1.5%;
-	position: relative;
-}
-.desktop-menu li a{
-	text-decoration: none;
-	font-size: 1.1rem;
-	padding:1%;
-	font-family: 'lato', sans-serif;
-	font-weight:400;
-	color:white;
-}
-
-.desktop-menu ul li{
-	display: inline;
-}
-.menu, .hamburger, .cross{
+/*hamburger menu*/
+.desktop-menu{
 	display:none;
 }
-.overheader {
-	text-align: center;
-	display: flex;
+.hamburger{
+	background:none;
+	position:absolute;
+	top:0;
+	right:0;
+	line-height:45px;
+	padding:7px 15px 0px 15px;
+	color:#feffff;
+	border:0;
+	font-size:1.4em;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	z-index:10000000000000;
+}
+.cross{
+	background:none;
+	position:absolute;
+	top:0px;
+	right:0;
+	padding:7px 15px 0px 15px;
+	color:#feffff;
+	border:0;
+	font-size:3em;
+	line-height:65px;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	z-index:10000000000000;
+}
+.menu{z-index:1000000; width:100%; background:#f1f1f1;  position:absolute; text-align:center; }
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:20px 0 6px 0; border-bottom:#dddddd 1px solid;}
+.menu li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px;     font-family: 'oxygen', sans-serif; font-weight: 600; font-size: 1rem; color:#efb672;}
+.menu ul li a:hover {  color: #666; text-decoration:none;}
+.menu a{text-decoration:none; color:#666;}
+.menu a:hover{text-decoration:none; color:#666;}
+.logo {padding-left:20px; text-decoration: none; color:black}
 
+/*java text animation*/
+.content {
+    display: block;
+		font-family: 'Red Hat Display', sans-serif;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    top: 40%;
+    width: -webkit-calc(70%);
+		color:white;
+		padding-top: 3.5%;
+}
+
+
+.typewrite {
+  font-size: 180%;
+  border-right: 2px solid rgba(255,255,255,.75);
+  line-height: 1.15;
+}
+
+.anim-typewrite {
+  animation: blinkTextCursor 500ms infinite normal;
+}
+
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+/*java text animation*/
+/*flexbox images*/
+.images {
+  padding: .5vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: flex;
+}
+.images div {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  width: 200px;
+  margin: .5vw;
+}
+.images div img {
+  width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 400px) {
+  .images div {
+		margin: 0;
+	}
+	.images {
+		padding: 0;
+	}
+}
+@media (min-width:700px) {
+	.desktop-menu{
+		display: block;
+	}
+	.desktop-menu ul{
+		list-style-type: none;
+		text-align: center;
+		background-color:#b6c0ca;
+		padding:1.5%;
+		position: relative;
+	}
+	.desktop-menu li a{
+		text-decoration: none;
+		font-size: 1.1rem;
+		padding:0.6%;
+		font-family: 'lato', sans-serif;
+		font-weight:400;
+		color:white;
+	}
+
+	.desktop-menu ul li{
+		display: inline;
+	}
+	.menu, .hamburger, .cross{
+		display:none;
+	}
+	.desktop-menu li a:hover {
+		font-weight: bold;
+	}
+	/*menu animation*/
+	.desktop-menu * {
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  -webkit-transition: all 0.35s ease;
+	  transition: all 0.35s ease;
+	}
+	.desktop-menu li {
+	  list-style: outside none none;
+	  margin: 0.5em 1.5em;
+	  padding: 0;
+	}
+	.desktop-menu a {
+	  padding: 0.4em 0;
+	  color: rgba(255, 255, 255, 0.5);
+	  position: relative;
+	  text-decoration: none;
+	  display: inline-block;
+	}
+	.desktop-menu a:before {
+	  position: absolute;
+	  content: '';
+	  -webkit-transition: all 0.35s ease;
+	  transition: all 0.35s ease;
+	  opacity: 0;
+	  top: 20%;
+	  bottom: 20%;
+	  left: 0;
+	  right: 0;
+	  border-top: 3px solid #f6e6d0;
+	  border-bottom: 3px solid #f6e6d0;
+	}
+	.desktop-menu a:hover,
+	.desktop-menu .current a {
+	  color: #ffffff;
+	}
+	.desktop-menu a:hover:before,
+	.desktop-menu .current a:before {
+	  opacity: 1;
+	  top: 0;
+	  bottom: 0;
+	}
+	/*menu animation*/
+}
+@media (max-width:700px) {
+	.content{
+		padding-top: 14%;
+	}
 }
