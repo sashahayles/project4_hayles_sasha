@@ -18,7 +18,7 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
 	top:0;
 	right:0;
 	line-height:45px;
-	padding:7px 15px 0px 15px;
+	padding:0px 15px;
 	color:#feffff;
 	border:0;
 	font-size:1.4em;
@@ -32,7 +32,7 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
 	position:absolute;
 	top:0px;
 	right:0;
-	padding:7px 15px 0px 15px;
+	padding: 0px 15px;
 	color:#feffff;
 	border:0;
 	font-size:3em;
@@ -56,29 +56,55 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
     min-height: 400px;
     background: transparent;
 }
-span{
+body {
+	background-color: #efb672;
+
+}
+span {
   position:absolute;
   top: 400px;
   left: 400px;
 }
 
-h1{
+h1 {
   font-size:2rem;
   font-family: 'Pangolin', cursive;
-  background-color: #efb672;
-  padding:4%;
+  padding:6.5%;
   text-align: center;
   color:white;
 }
+h2{
+  text-align:center;
+  padding:2% 0% 0%;
+  font-size:1.7rem;
+	font-family: 'Pangolin', cursive;
+	color:white;
+}
 
-p{
+p {
   padding: 2% 20% 0.5%;
   justify-content: center;
-  background-color: #efb672;
   color:white;
   font-size: 1.1rem;
   font-family: 'Red Hat Display', sans-serif;
 }
+
+ul {
+  padding:3% 12%;
+	font-family: 'Red Hat Display', sans-serif;
+	font-size: 1.2rem;
+	color:white;
+	justify-content: center;
+}
+span{
+	text-align:center;
+	padding:2% 0% 0%;
+	font-size:1.7rem;
+	font-family: 'Pangolin', cursive;
+	color:white;
+}
+
+/*media queries*/
 @media (min-width:700px) {
 	.desktop-menu{
 		display: block;
@@ -150,3 +176,4 @@ p{
 	  top: 0;
 	  bottom: 0;
 	}
+}
